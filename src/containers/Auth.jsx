@@ -17,12 +17,10 @@ import './Auth.css';
 export default class Auth extends Component {
   constructor(props) {
     super(props);
-     console.log("contructor up")
     this.state = {};
   }
 
   render () {
-  console.log("render up")
     return (
       <Container>
         <Row>
