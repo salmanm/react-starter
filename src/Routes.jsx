@@ -8,7 +8,11 @@ import Home from './containers/Home';
 import About from './containers/About';
 import Auth from './containers/Auth';
 
-import AuthRoute from './external.component';
+// import AuthRoute from './external.component';
+
+const AuthRoute = <Route path="/auth" getComponents={(nextState, cb) => {
+  cb(null, Auth);
+}} />;
 
 const validateLogin = (nextState, replace, callback) => {
   // do auth verification here
@@ -21,10 +25,17 @@ export default (props) => (
     <Redirect from="/" to="/home" />
 
     <Route path="/" component={App}>
-      <AuthRoute />
+      { /* Either like this, see above for declaration of AuthRoute */}
+      { AuthRoute }
+
+      { /* Or like this, both are pretty same */ }
+      <Route path="/auth" getComponents={(nextState, cb) => {
+        cb(null, Auth);
+      }} />
+
       <Route path="/home" component={Home} onEnter={validateLogin} />
       <Route path="/about" component={About} onEnter={validateLogin} />
-      
+
     </Route>
   </Router>
 );
