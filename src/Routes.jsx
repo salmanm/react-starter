@@ -26,12 +26,6 @@ export default (props) => (
 
     <Route path="/" component={App}>
       { /* Either like this, see above for declaration of AuthRoute */}
-      { AuthRoute }
-
-      { /* Or like this, both are pretty same */ }
-      <Route path="/auth-2" getComponents={(nextState, cb) => {
-        cb(null, Auth);
-      }} />
 
       { AuthRouteExternal }
 

@@ -52,6 +52,7 @@ export default class App extends Component {
                     <ul className="mui-list--inline mui--text-body2 nav-bar">
                       <li><Link activeClassName="active" to="/home">Home</Link></li>
                       <li><Link activeClassName="active" to="/about">About</Link></li>
+                      <li><Link activeClassName="active" to="/auth">Auth</Link></li>
                     </ul>
                   </td>
                 </tr>
