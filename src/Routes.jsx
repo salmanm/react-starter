@@ -6,6 +6,9 @@ import Login from './containers/Login';
 import App from './containers/App';
 import Home from './containers/Home';
 import About from './containers/About';
+import Auth from './containers/Auth';
+
+import AuthRoute from './external.component';
 
 const validateLogin = (nextState, replace, callback) => {
   // do auth verification here
@@ -18,8 +21,10 @@ export default (props) => (
     <Redirect from="/" to="/home" />
 
     <Route path="/" component={App}>
+      <AuthRoute />
       <Route path="/home" component={Home} onEnter={validateLogin} />
       <Route path="/about" component={About} onEnter={validateLogin} />
+      
     </Route>
   </Router>
 );
