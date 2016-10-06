@@ -7,13 +7,6 @@ import Container from 'muicss/lib/react/container';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
 
-import { showToast } from '../actions/misc';
-
-import './Auth.css';
-
-@connect(state => ({}), ({
-  showToast
-}))
 export default class Auth extends Component {
   constructor(props) {
     super(props);

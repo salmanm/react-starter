@@ -6,13 +6,8 @@ import Login from './containers/Login';
 import App from './containers/App';
 import Home from './containers/Home';
 import About from './containers/About';
-import Auth from './containers/Auth';
 
-import AuthRouteExternal from './external.component';
-
-const AuthRoute = <Route path="/auth-1" getComponents={(nextState, cb) => {
-  cb(null, Auth);
-}} />;
+import AuthRouteExternal from './external/index';
 
 const validateLogin = (nextState, replace, callback) => {
   // do auth verification here
