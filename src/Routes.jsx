@@ -8,9 +8,9 @@ import Home from './containers/Home';
 import About from './containers/About';
 import Auth from './containers/Auth';
 
-// import AuthRoute from './external.component';
+import AuthRouteExternal from './external.component';
 
-const AuthRoute = <Route path="/auth" getComponents={(nextState, cb) => {
+const AuthRoute = <Route path="/auth-1" getComponents={(nextState, cb) => {
   cb(null, Auth);
 }} />;
 
@@ -29,9 +29,11 @@ export default (props) => (
       { AuthRoute }
 
       { /* Or like this, both are pretty same */ }
-      <Route path="/auth" getComponents={(nextState, cb) => {
+      <Route path="/auth-2" getComponents={(nextState, cb) => {
         cb(null, Auth);
       }} />
+
+      { AuthRouteExternal }
 
       <Route path="/home" component={Home} onEnter={validateLogin} />
       <Route path="/about" component={About} onEnter={validateLogin} />
